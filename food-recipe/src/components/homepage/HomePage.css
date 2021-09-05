@@ -1,0 +1,33 @@
+.navbar{
+    font-size: 1.2rem;
+}
+.landing{
+    margin: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 2rem;
+}
+.landing-link{
+    padding: 1rem;
+}
+.landing-titles{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+.landing-img{
+    width: 90%;
+    height: 15rem;
+    background-size: cover;
+    
+}
+.landing-des{
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+}
