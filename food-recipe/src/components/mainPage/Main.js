@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Main.css";
+import Navbar from "../navbar/Navbar";
 import Axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Recipe from "../recipe/Recipe";
@@ -21,10 +22,7 @@ function Main() {
       }
       console.log(result);
       setRecipes(result.data.hits);
-      setQuery("");
-    //   setAlert("");
-    } else {
-    //   setAlert("Please fill the form");
+      setQuery("")
     }
   };
 
@@ -36,23 +34,26 @@ function Main() {
   };
 
   return (
-    <div className="App">
-      <h1>Food Searching App</h1>
-      <form onSubmit={onSubmit} className="search-form">
-        {/* {alert !== "" && <Alert alert={alert} />} */}
-        <input
-          type="text"
-          name="query"
-          onChange={onChange}
-          value={query}
-          autoComplete="off"
-          placeholder="Search Food"
-        />
-        <input type="submit" value="Search" />
-      </form>
-      <div className="recipes">
-        {recipes !== [] &&
-          recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
+    <div>
+      <Navbar />
+      <div className="container">
+        <h1 className="heading">Food and Recipes</h1>
+
+        <form onSubmit={onSubmit} className="search-form mb-5">
+          <input
+            type="text"
+            name="query"
+            onChange={onChange}
+            value={query}
+            autoComplete="off"
+            placeholder="Search Food"
+          />
+          <button type="submit" className="btn submit-btn">Search</button>
+        </form>
+        <div className="recipes d-flex flex-column flex-md-row flex-wrap">
+          {recipes !== [] &&
+            recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
+        </div>
       </div>
     </div>
   );

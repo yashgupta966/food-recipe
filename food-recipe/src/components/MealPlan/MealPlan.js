@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../navbar/Navbar';
 import axios from 'axios';
 import MealList from './MealList';
 
@@ -11,13 +12,13 @@ function MealPlan() {
     const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${API_KEY}&timeFrame=day&targetCalories=${calories}`;
 
     const getData= async () => {
-            const res = await axios.get(url);
-            console.log(res);
-            setMealData(res.data);
-            console.log(mealData);
-    };
+        const res = await axios.get(url);
+        console.log(res);
+        setMealData(res.data);
+        console.log(mealData);
+};
 
-    function handleChange(e) {
+    function onChange(e) {
         setCalories(e.target.value);
     }
 
@@ -28,13 +29,26 @@ function MealPlan() {
 
     return (
         <div>
-                <input type="number"
-                    placeholder="Calories (default 2000)" 
-                    onChange={handleChange}
-                />
-                <button type="submit" onClick={onSubmit}>Get Daily Meal Plan</button>
-            <div>
-            {mealData && <MealList mealData={mealData} />}
+            <Navbar />
+
+            <div className="container">
+                <h1 className="heading">Meal Planner</h1>
+
+                <form onSubmit={onSubmit} className="search-form mb-5">
+                    <input
+                        type="text"
+                        name="ingridients"
+                        onChange={onChange}
+                        value={calories}
+                        autoComplete="off"
+                        placeholder="Calories in number"
+                    />
+                    <button type="submit" className="btn submit-btn">Search</button>
+                </form>
+                
+                <div >
+                    {mealData && <MealList mealData={mealData} />}
+                </div>
             </div>
         </div>
     );

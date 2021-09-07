@@ -1,65 +1,54 @@
 import React from 'react';
 import "./HomePage.css";
+import Navbar from '../navbar/Navbar';
 
 function HomePage() {
     return (
-        <div className="container">
-
-            {/* ---- Navbar ------ */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                
-                    <a className="navbar-brand" href="/">Food Recipe</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto">
-                            <li className="nav-item"><a className="nav-link" href="/main">Find Recipe</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/fridge">What's in Fridge</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/meal-plan">Meal Plan</a></li>
-                        </ul>
-                    </div>
-                
-            </nav>
-            {/* ----- end of navbar ---- */}
+        <div className="container-fluid">
+            
+            <Navbar />
 
             {/* ---- main ----- */}
-            
-            <div className="d-flex flex-column flex-sm-row">
+
+            <div className=" container d-flex flex-column flex-sm-row">
 
                 <div className="landing">
-                    <a href="/recipe" className="landing-link"><img src="/assets/images/samosa.jpg" alt="recipe" className="landing-img"/></a>
+                    <div className="mb-2">
+                        <a href="/recipe" className="landing-link"><img src="/assets/images/samosa.jpg" alt="recipe" className="landing-img" /></a>
+                    </div>
+                    <div className="mt-3 text-center">
+                        <a href="/recipe" className="landing-titles">Food Recipe</a>
 
-                    <a href="/recipe" className="landing-titles">Food Recipe</a>
-
-                    <p className="landing-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br/>
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+                        <p className="landing-des">Food Recipe helps you to find recipes based<br />
+                            on ingridents, recipe name, cusine, taste. You,<br />
+                            can click on the above image or heading to go the search page.</p>
+                    </div>
                 </div>
 
                 <div className="landing">
-                <a href="/fridge" className="landing-link"><img src="/assets/images/fridge.jpg" alt="recipe" className="landing-img"/></a>
+                    <div className="mb-2">
+                        <a href="/fridge" className="landing-link"><img src="/assets/images/fridge.jpg" alt="fridge" className="landing-img" /></a>
+                    </div>
+                    <div className="mt-3">
+                        <a href="/fridge" className="landing-titles">What's in Your Fridge</a>
 
-                    <a href="/fridge" className="landing-titles">What's in Your Fridge</a>
-
-                    <p className="landing-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/>
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris<br/> 
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in .</p>
+                        <p className="landing-des">What's in your fridge helps you to find <br />the recipe based on your ingredients
+                            <br />that you got. It also shows the missing<br /> items that are requried to prepare that <br />recipe.
+                            You can give input  asa list of ingredients with commma <br />separated, and get the recipes you can prepare</p>
+                    </div>
                 </div>
-
                 <div className="landing">
-                <a href="/meal-plan" className="landing-link"><img src="/assets/images/meal-plan.jpg" alt="recipe" className="landing-img"/></a>
+                    <div className="mb-2">
+                        <a href="/meal-plan" className="landing-link"><img src="/assets/images/meal-plan.jpg" alt="meal-plan" className="landing-img" /></a>
+                    </div>
+                    <div className="mt-3">
+                        <a href="/meal-plan" className="landing-titles">Meal Plan</a>
 
-                    <a href="/meal-plan" className="landing-titles">Meal Plan</a>
-
-                    <p className="landing-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/>
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br/>
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+                        <p className="landing-des">Meal Plan is a great way to get your daily meal <br />plan or
+                            weekly plan based on<br /> the number of calories you want to take. It also shows<br /> you the nutrients you gonna consume.
+                            You need to give the <br />number of calories as input and it will return you meal plan.</p>
+                    </div>
                 </div>
-        
             </div>
             {/* ---end of main ------- */}
         </div>
